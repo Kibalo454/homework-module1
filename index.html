@@ -1,42 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Great Cliffs - Home</title>
+  <meta charset="utf-8">
+  <title>Great Cliffs of California</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Header */
+    header {
+      width: 100%;
+      min-height: 400px;
+      padding-top: 3em;
+    }
+
+    #home header {
+      background: lightgrey url("images/cliff_ocean.jpg") no-repeat center center;
+      background-size: 1500px;
+    }
+
+    .main-header {
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 700px;
+      margin: 2em auto 0 auto;
+      min-height: 100px;
+      height: 100px;
+    }
+
+    .main-header .logo img {
+      width: 100px;
+      height: 100px;
+      margin: 0 2em 0 0;
+      float: left;
+    }
+
+    /* Navigation */
+    .main-menu {
+      margin-left: 227px;
+      font-weight: 400;
+    }
+
+    .main-menu ul li {
+      list-style-type: none;
+      display: block;
+      float: left;
+      padding-left: 25px;
+      padding-right: 25px;
+      border-left: 1px solid rgba(202, 204, 202, 0.6);
+      line-height: 100px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .main-menu ul li:first-child {
+      border-left: none;
+    }
+
+    .main-menu ul li a {
+      text-decoration: none;
+      color: #888;
+    }
+
+    .main-menu ul li a:hover {
+      color: #9ed034;
+    }
+
+    .main-menu ul li.active {
+      background: #9ed034;
+      border: none;
+    }
+
+    .main-menu ul li.active a {
+      color: #fff;
+    }
+
+    /* Main Content */
+    main {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #9ed034;
+      padding: 40px;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    main h2 {
+      font-size: 1.8em;
+      margin: 20px 0 10px;
+    }
+
+    main p {
+      color: #555;
+      font-size: 1em;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    /* Partners */
+    .partners {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #f4f4f4;
+    }
+
+    .partners img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 15px;
+      border: 2px solid #ccc;
+      transition: transform 0.3s ease;
+    }
+
+    .partners img:hover {
+      transform: scale(1.1);
+      border-color: #9ed034;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .copyright {
+      flex: 1;
+    }
+
+    .socials {
+      flex: 1;
+      text-align: right;
+    }
+
+    .socials a {
+      margin-left: 10px;
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .socials a:hover {
+      background-color: #9ed034;
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <!-- Main image - adjust filename to match your images folder -->
-        <img src="images/cliff_ocean.jpg" alt="Beautiful view of the Great Cliffs overlooking the ocean" width="800" height="400">
-        <!-- Logo - replace the h3 element with this img -->
-        <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
-    </header>
 
-    <nav>
-        <a href="index.html">Home</a> | 
-        <a href="activities.html">Activities</a> | 
-        <a href="contact.html">Contact</a>
-    </nav>
+<body id="home">
+  <header>
+    <div class="main-header">
+      <div class="logo">
+        <img src="images/logo.png" alt="Great Cliffs Logo">
+      </div>
+      <nav class="main-menu">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="cliffs.html">Cliffs</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <h1>Welcome to Great Cliffs</h1>
-        <p>
-            Experience the breathtaking beauty and adventure that awaits you at Great Cliffs. 
-            From hiking trails with stunning ocean views to thrilling outdoor activities, 
-            we offer unforgettable experiences for visitors of all ages.
-        </p>
-        
-        <h2>What We Offer</h2>
-        <p>
-            Great Cliffs is your gateway to outdoor adventure and natural beauty. 
-            Whether you're seeking peaceful moments in nature or heart-pumping activities, 
-            you'll find it all here along our magnificent coastline.
-        </p>
-    </main>
+  <main>
+    <h1>Welcome to Great Cliffs</h1>
+    <h2>Explore the Beauty</h2>
+    <p>Great Cliffs of California is a destination that offers breathtaking views, unforgettable experiences, and a connection to nature you’ll never forget.</p>
+    <h2>Plan Your Journey</h2>
+    <p>Whether you're hiking the trails, touring the coastline, or simply relaxing with a view, Great Cliffs is your escape from the ordinary.</p>
+  </main>
 
-    <footer>
-        <p>&copy; 2024 Great Cliffs. All rights reserved.</p>
-    </footer>
+  <section class="partners">
+    <img src="partners/partner-bustour.png" alt="Bus Tour Logo">
+    <img src="partners/partner-cabinrental.png" alt="Cabin Rental Logo">
+    <img src="partners/partner-campingadv.png" alt="Camping Adventure Logo">
+    <img src="partners/partner-collegetours.png" alt="College Tours Logo">
+    <img src="partners/partner-rentalbike.png" alt="Rental Bike Logo">
+    <img src="partners/partner-tourgroup.png" alt="Tour Group Logo">
+  </section>
+
+  <footer>
+    <div class="copyright">
+      <p>&copy; 2025 Great Cliffs. All rights reserved.</p>
+    </div>
+    <div class="socials">
+      <a href="#" class="fa-brands fa-facebook-f"></a>
+      <a href="#" class="fa-brands fa-twitter"></a>
+      <a href="#" class="fa-brands fa-instagram"></a>
+    </div>
+  </footer>
 </body>
 </html>
