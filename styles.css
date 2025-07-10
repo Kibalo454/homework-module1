@@ -205,3 +205,62 @@ footer {
 .socials a:hover {
   background-color: #9ed034;
 }
+/* Contact Form Styling */
+form {
+  width: 60%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+form .form-group {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #4977D1;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #9ed034;
+  outline: none;
+}
+
+form .button {
+  background-color: #4977D1;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+form .button:hover {
+  background-color: #9ed034;
+}
+
+/* Highlight first child of label (e.g. span for styling keywords if needed) */
+label span:first-child {
+  color: #4977D1;
+  font-weight: bold;
+}
