@@ -1,4 +1,4 @@
-/* Header */
+/* ========== HEADER ========== */
 header {
   width: 100%;
   min-height: 400px;
@@ -20,6 +20,12 @@ body#contact header {
   background-size: cover;
 }
 
+.banner {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .main-header {
   background-color: rgba(255, 255, 255, 0.8);
   width: 700px;
@@ -35,7 +41,7 @@ body#contact header {
   float: left;
 }
 
-/* Navigation */
+/* ========== NAVIGATION ========== */
 .main-menu {
   margin-left: 227px;
   font-weight: 400;
@@ -45,8 +51,7 @@ body#contact header {
   list-style-type: none;
   display: block;
   float: left;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 0 25px;
   border-left: 1px solid rgba(202, 204, 202, 0.6);
   line-height: 100px;
   text-transform: uppercase;
@@ -75,7 +80,7 @@ body#contact header {
   color: #fff;
 }
 
-/* Main Content */
+/* ========== MAIN CONTENT ========== */
 main {
   font-family: Arial, Helvetica, sans-serif;
   color: #9ed034;
@@ -86,6 +91,7 @@ main {
 main h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
+  color: #66b032;
 }
 
 main h2 {
@@ -94,13 +100,53 @@ main h2 {
 }
 
 main p {
-  color: #555;
+  color: #333;
   font-size: 1em;
   max-width: 800px;
   margin: 0 auto 20px;
+  line-height: 1.6;
 }
 
-/* Activities Table Styling */
+/* ========== CLIFF GALLERY ========== */
+.cliff-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cliff {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.cliff h2 {
+  background-color: #8B0000;
+  color: white;
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.cliff img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cliff p {
+  font-size: 0.95rem;
+  padding: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ========== ACTIVITIES TABLE ========== */
 table {
   width: 80%;
   margin: 40px auto;
@@ -127,18 +173,16 @@ thead {
   color: white;
 }
 
-thead th {
-  padding: 15px;
+thead th,
+tbody td {
+  padding: 15px 20px;
   text-align: center;
   border: 1px solid #ccc;
 }
 
 tbody td {
-  padding: 20px;
-  text-align: center;
-  border: 1px solid #ccc;
-  vertical-align: middle;
   color: #4977D1;
+  vertical-align: middle;
 }
 
 tbody tr:hover {
@@ -151,7 +195,7 @@ tbody td:first-child {
   color: #4977D1;
 }
 
-/* Partners */
+/* ========== PARTNERS ========== */
 .partners {
   text-align: center;
   padding: 40px 0;
@@ -173,7 +217,7 @@ tbody td:first-child {
   border-color: #9ed034;
 }
 
-/* Footer */
+/* ========== FOOTER ========== */
 footer {
   background-color: #222;
   color: white;
@@ -205,7 +249,8 @@ footer {
 .socials a:hover {
   background-color: #9ed034;
 }
-/* Contact Form Styling */
+
+/* ========== CONTACT FORM ========== */
 form {
   width: 60%;
   margin: 40px auto;
@@ -259,8 +304,11 @@ form .button:hover {
   background-color: #9ed034;
 }
 
-/* Highlight first child of label (e.g. span for styling keywords if needed) */
 label span:first-child {
   color: #4977D1;
   font-weight: bold;
+}
+body#cliffs header {
+  background: url("images/forest_cliff (1).jpg") no-repeat center;
+  background-size: cover;
 }
