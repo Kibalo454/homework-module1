@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Great Cliffs of California</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    #timeofday {
+      text-align: center;
+      margin: 30px auto;
+      padding: 20px 40px;
+      background: linear-gradient(0deg, rgba(251,215,139,1) 0%, rgba(118,213,245,1) 100%);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 32px;
+      font-weight: bold;
+      color: #3a3a3a;
+      border-radius: 15px;
+      width: fit-content;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+  </style>
 </head>
 
 <body id="home">
@@ -24,16 +39,20 @@
     </div>
   </header>
 
+  <!-- Clock Section -->
+  <section id="timeofday">
+    <span>Your Current Local Time: </span>
+    <span id="clock"></span>
+  </section>
+
   <main>
     <h1>Welcome to Great Cliffs</h1>
     <h2>Explore the Beauty</h2>
     <p>Great Cliffs of California is a destination that offers breathtaking views, unforgettable experiences, and a connection to nature you’ll never forget.</p>
+
     <h2>Plan Your Journey</h2>
     <p>Whether you're hiking the trails, touring the coastline, or simply relaxing with a view, Great Cliffs is your escape from the ordinary.</p>
   </main>
-
-  <!-- Digital Clock Display -->
-  <div id="clock" class="clock-style"></div>
 
   <section class="partners">
     <img src="partners/partner-bustour.png" alt="Bus Tour Logo">
@@ -55,7 +74,40 @@
     </div>
   </footer>
 
-  <!-- JavaScript File for Clock -->
-  <script src="clock.js"></script>
+  <!-- JavaScript Codes -->
+  <script>
+    // Create a time data function
+    function currentTime() {
+      // Declare variables
+      var d = new Date();               // Get current date
+      var hr = d.getHours();            // Get current hours
+      var min = d.getMinutes();         // Get current minutes
+      var sec = d.getSeconds();         // Get current seconds
+      var ampm;                         // AM or PM
+
+      // Add leading 0 to single-digit minutes/seconds
+      if (min < 10) min = "0" + min;
+      if (sec < 10) sec = "0" + sec;
+
+      // Determine AM or PM and convert 24-hour to 12-hour
+      if (hr >= 12) {
+        ampm = "PM";
+        if (hr > 12) hr = hr - 12;
+      } else {
+        ampm = "AM";
+        if (hr === 0) hr = 12;
+      }
+
+      // Assemble the time string
+      var time = hr + ":" + min + ":" + sec + " " + ampm;
+
+      // Display time on the page
+      document.getElementById("clock").textContent = time;
+    }
+
+    // Run clock every second
+    setInterval(currentTime, 1000);
+    currentTime(); // Initial call
+  </script>
 </body>
 </html>
