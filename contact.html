@@ -59,14 +59,8 @@
     </form>
   </main>
 
-  <section class="partners">
-    <img src="partners/partner-bustour.png" alt="Bus Tour Logo" />
-    <img src="partners/partner-cabinrental.png" alt="Cabin Rental Logo" />
-    <img src="partners/partner-campingadv.png" alt="Camping Adventure Logo" />
-    <img src="partners/partner-collegetours.png" alt="College Tours Logo" />
-    <img src="partners/partner-rentalbike.png" alt="Rental Bike Logo" />
-    <img src="partners/partner-tourgroup.png" alt="Tour Group Logo" />
-  </section>
+  <!-- Partner section will be populated via JavaScript -->
+  <section class="partners"></section>
 
   <footer>
     <div class="copyright">
@@ -78,5 +72,26 @@
       <a href="#" class="fa-brands fa-instagram"></a>
     </div>
   </footer>
+
+  <!-- JavaScript to load partner logos dynamically -->
+  <script>
+    const partners = [
+      { src: "partners/partner-bustour.png", alt: "Bus Tour Logo" },
+      { src: "partners/partner-cabinrental.png", alt: "Cabin Rental Logo" },
+      { src: "partners/partner-campingadv.png", alt: "Camping Adventure Logo" },
+      { src: "partners/partner-collegetours.png", alt: "College Tours Logo" },
+      { src: "partners/partner-rentalbike.png", alt: "Rental Bike Logo" },
+      { src: "partners/partner-tourgroup.png", alt: "Tour Group Logo" }
+    ];
+
+    const partnerSection = document.querySelector(".partners");
+
+    partners.forEach(partner => {
+      const img = document.createElement("img");
+      img.src = partner.src;
+      img.alt = partner.alt;
+      partnerSection.appendChild(img);
+    });
+  </script>
 </body>
 </html>
