@@ -37,39 +37,43 @@
     <h2>Email:</h2>
     <p>info@greatcliffs.com</p>
 
-    <form action="/contact" method="post">
-      <div class="form-group">
-        <label for="name"><span>Name:</span></label><br>
-        <input type="text" id="name" name="name" required><br><br>
-      </div>
+    <h2>Contact Form</h2>
+    <form action="/contact" method="post" style="border: 1px solid #b0d58b; padding: 15px;">
 
-      <div class="form-group">
-        <label for="email"><span>Email:</span></label><br>
-        <input type="email" id="email" name="email" required><br><br>
-      </div>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
 
-      <div class="form-group">
-        <label for="message"><span>Message:</span></label><br>
-        <textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
-      </div>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
 
-      <div class="commentbox"> 
-        <label>How did you hear about us: </label> 
-        <textarea></textarea> 
-      </div> 
+      <label for="phone">Phone:</label><br>
+      <input type="tel" id="phone" name="phone" placeholder="xxx-xxx-xxxx"><br><br>
 
-      <div class="randomcode"> 
-        <input type="text" name="randomcode" placeholder="Enter characters"> 
-        <p id="codes"></p> 
-      </div> 
+      <label>How should we contact you?</label><br>
+      <input type="radio" id="emailContact" name="contactMethod" value="Email" checked>
+      <label for="emailContact">Email</label>
+      <input type="radio" id="phoneContact" name="contactMethod" value="Phone">
+      <label for="phoneContact">Phone</label><br><br>
 
-      <div class="button"> 
-        <input type="submit" id="submit" value="Inquire"> 
-      </div>
+      <label for="cliff">Which Cliff are you inquiring?</label><br>
+      <select id="cliff" name="cliff">
+        <option>West Cliff</option>
+        <option>North Cliff</option>
+        <option>East Cliff</option>
+        <option>South Cliff</option>
+      </select><br><br>
+
+      <label for="hear">How did you hear about us:</label><br>
+      <textarea id="hear" name="hear" rows="4" cols="40"></textarea><br><br>
+
+      <label>Enter the code shown below:</label><br>
+      <input type="text" id="codeentered" name="randomcode" placeholder="Enter characters">
+      <span id="codes" style="display:inline-block; margin-left:10px; padding:5px; background:#eef6e5; font-weight:bold;"></span><br><br>
+
+      <input type="submit" id="submit" value="Inquire" disabled style="padding: 8px 16px; border: none; color: white; background-color: rgba(73, 119, 209, 0.3); cursor: not-allowed;">
     </form>
   </main>
 
-  <!-- Partner section will be populated via JavaScript -->
   <section class="partners"></section>
 
   <footer>
