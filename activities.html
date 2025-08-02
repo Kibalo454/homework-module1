@@ -6,6 +6,26 @@
   <title>Activities | Great Cliffs of California</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    /* Highlight selected cells */
+    .selected {
+      background-color: #ffe08a;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Hand cursor for selectable cells */
+    .selectable {
+      cursor: pointer;
+    }
+
+    /* Optional: Style for not available cells */
+    .not-available {
+      color: #999;
+      background-color: #f0f0f0;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
 
 <body id="activities">
@@ -47,45 +67,44 @@
       </thead>
       <tbody>
         <tr>
-          <td>Hiking</td>
-          <td>2-6 hours</td>
-          <td>Easy to Hard</td>
-          <td>Year Round</td>
-          <td>Free</td>
+          <td class="selectable">Hiking</td>
+          <td class="selectable">2-6 hours</td>
+          <td class="selectable">Easy to Hard</td>
+          <td class="selectable">Year Round</td>
+          <td class="selectable">Free</td>
         </tr>
         <tr>
-          <td>Kayak</td>
-          <td>2-4 hours</td>
-          <td>Easy to Medium</td>
-          <td>Apr-Oct</td>
-          <td>$45-75</td>
+          <td class="selectable">Kayak</td>
+          <td class="selectable">2-4 hours</td>
+          <td class="selectable">Easy to Medium</td>
+          <td class="selectable">Apr-Oct</td>
+          <td class="selectable">$45-75</td>
         </tr>
         <tr>
-          <td>Skydiving</td>
-          <td>3-4 hours</td>
-          <td>Medium</td>
-          <td>May-Sep</td>
-          <td>$200-350</td>
+          <td class="selectable">Skydiving</td>
+          <td class="selectable">3-4 hours</td>
+          <td class="selectable">Medium</td>
+          <td class="not-available">Not Available</td>
+          <td class="selectable">$200-350</td>
         </tr>
         <tr>
-          <td>Biking</td>
-          <td>1-5 hours</td>
-          <td>Easy to Hard</td>
-          <td>Mar-Nov</td>
-          <td>$25-50</td>
+          <td class="selectable">Biking</td>
+          <td class="selectable">1-5 hours</td>
+          <td class="selectable">Easy to Hard</td>
+          <td class="selectable">Mar-Nov</td>
+          <td class="selectable">$25-50</td>
         </tr>
         <tr>
-          <td>Camping</td>
-          <td>Overnight</td>
-          <td>Easy</td>
-          <td>Apr-Oct</td>
-          <td>$30-60</td>
+          <td class="selectable">Camping</td>
+          <td class="selectable">Overnight</td>
+          <td class="selectable">Easy</td>
+          <td class="selectable">Apr-Oct</td>
+          <td class="selectable">$30-60</td>
         </tr>
       </tbody>
     </table>
   </main>
 
-  <!-- Dynamic Partner Section -->
   <section class="partners"></section>
 
   <footer>
@@ -99,7 +118,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Partner Images -->
   <script>
     const partners = [
       { src: "partners/partner-bustour.png", alt: "Bus Tour Logo" },
@@ -111,7 +129,6 @@
     ];
 
     const partnerSection = document.querySelector(".partners");
-
     partners.forEach(partner => {
       const img = document.createElement("img");
       img.src = partner.src;
@@ -119,5 +136,9 @@
       partnerSection.appendChild(img);
     });
   </script>
+
+  <!-- jQuery + custom JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/activity.js"></script>
 </body>
 </html>

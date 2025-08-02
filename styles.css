@@ -321,3 +321,22 @@ body#cliffs header {
   background: linear-gradient(0deg, rgba(251,215,139,1) 0%, rgba(118,213,245,1) 100%);
   color: #125688;
 }
+
+/* Highlight for selected activity cells */
+.selected {
+  background-color: #ffe08a !important;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Visual cue for selectable cells */
+.selectable {
+  cursor: pointer;
+}
+
+/* Optional: style for not-available cells (if used) */
+.not-available {
+  background-color: #eee;
+  color: #999;
+  cursor: not-allowed;
+}
