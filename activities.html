@@ -6,26 +6,6 @@
   <title>Activities | Great Cliffs of California</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <style>
-    /* Highlight selected cells */
-    .selected {
-      background-color: #ffe08a;
-      color: #000;
-      font-weight: bold;
-    }
-
-    /* Hand cursor for selectable cells */
-    .selectable {
-      cursor: pointer;
-    }
-
-    /* Optional: Style for not available cells */
-    .not-available {
-      color: #999;
-      background-color: #f0f0f0;
-      cursor: not-allowed;
-    }
-  </style>
 </head>
 
 <body id="activities">
@@ -48,61 +28,65 @@
   <main>
     <h1>Activities</h1>
     <p>
-      Great Cliffs offers a wide variety of outdoor activities for adventure seekers and nature lovers alike. 
-      From challenging hikes along cliff-top trails to peaceful kayaking in protected coves, 
-      there's something for everyone. Our experienced guides ensure safe and memorable experiences 
-      while you explore the stunning natural beauty of our coastal paradise.
+      Below is a grid of available activities across the four main cliffs. Click a cell to select or deselect an activity and see your list below.
     </p>
 
-    <table>
+    <table id="activity-table">
       <caption>Activities at the Cliffs</caption>
       <thead>
         <tr>
           <th>Activity</th>
-          <th>Duration</th>
-          <th>Difficulty</th>
-          <th>Season</th>
-          <th>Price</th>
+          <th>West Cliff</th>
+          <th>North Cliff</th>
+          <th>East Cliff</th>
+          <th>South Cliff</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="selectable">Hiking</td>
-          <td class="selectable">2-6 hours</td>
-          <td class="selectable">Easy to Hard</td>
-          <td class="selectable">Year Round</td>
-          <td class="selectable">Free</td>
+          <td>Hiking</td>
+          <td class="selectable">College Hikes</td>
+          <td class="selectable">Family Fun</td>
+          <td class="selectable">Treasure Trails</td>
+          <td class="selectable">Canyon Explorer</td>
         </tr>
         <tr>
-          <td class="selectable">Kayak</td>
-          <td class="selectable">2-4 hours</td>
-          <td class="selectable">Easy to Medium</td>
-          <td class="selectable">Apr-Oct</td>
-          <td class="selectable">$45-75</td>
-        </tr>
-        <tr>
-          <td class="selectable">Skydiving</td>
-          <td class="selectable">3-4 hours</td>
-          <td class="selectable">Medium</td>
+          <td>Kayak</td>
+          <td class="selectable">Western Kayak Meetup</td>
           <td class="not-available">Not Available</td>
-          <td class="selectable">$200-350</td>
+          <td class="selectable">Youth Kayaking</td>
+          <td class="selectable">Kayak Down</td>
         </tr>
         <tr>
-          <td class="selectable">Biking</td>
-          <td class="selectable">1-5 hours</td>
-          <td class="selectable">Easy to Hard</td>
-          <td class="selectable">Mar-Nov</td>
-          <td class="selectable">$25-50</td>
+          <td>Skydiving</td>
+          <td class="selectable">Seacliff Diving</td>
+          <td class="selectable">Sky is the limit</td>
+          <td class="not-available">Not Available</td>
+          <td class="selectable">Sky Diving for Beginners</td>
         </tr>
         <tr>
-          <td class="selectable">Camping</td>
-          <td class="selectable">Overnight</td>
-          <td class="selectable">Easy</td>
-          <td class="selectable">Apr-Oct</td>
-          <td class="selectable">$30-60</td>
+          <td>Biking</td>
+          <td class="selectable">Bicycle for One</td>
+          <td class="not-available">Not Available</td>
+          <td class="selectable">Bike Meetup Group</td>
+          <td class="not-available">Not Available</td>
+        </tr>
+        <tr>
+          <td>Camping</td>
+          <td class="selectable">Youth Camp</td>
+          <td class="selectable">Rent a Tent</td>
+          <td class="selectable">Campground Adventure</td>
+          <td class="selectable">Sunset Camping</td>
         </tr>
       </tbody>
     </table>
+
+    <div id="selected-activities">
+      <h3>My selected activities to enquire:</h3>
+      <ul></ul>
+      <input type="email" placeholder="johndoe@gmail.com" />
+      <button>Get Info</button>
+    </div>
   </main>
 
   <section class="partners"></section>
@@ -137,8 +121,33 @@
     });
   </script>
 
-  <!-- jQuery + custom JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/activity.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#activity-table td.selectable").on("click", function () {
+        if ($(this).hasClass("not-available")) return;
+
+        $(this).toggleClass("selected");
+
+        const activity = $(this).text().trim();
+        const colIndex = $(this).index();
+        const cliffSite = $("#activity-table thead th").eq(colIndex).text().trim();
+        const fullActivity = `${activity} at ${cliffSite}`;
+        const $list = $("#selected-activities ul");
+
+        if ($(this).hasClass("selected")) {
+          $list.append(`<li data-cliff="${colIndex}" data-activity="${activity}">${fullActivity}</li>`);
+        } else {
+          $list.find(`li[data-cliff="${colIndex}"][data-activity="${activity}"]`).remove();
+        }
+
+        if ($list.children().length > 0) {
+          $("#selected-activities").show();
+        } else {
+          $("#selected-activities").hide();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

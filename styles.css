@@ -20,6 +20,11 @@ body#contact header {
   background-size: cover;
 }
 
+body#cliffs header {
+  background: url("images/forest_cliff (1).jpg") no-repeat center;
+  background-size: cover;
+}
+
 .banner {
   width: 100%;
   height: auto;
@@ -195,6 +200,77 @@ tbody td:first-child {
   color: #4977D1;
 }
 
+/* ========== CELL STYLES ========== */
+.selected {
+  background-color: #ffe08a !important;
+  color: #000;
+  font-weight: bold;
+}
+
+.selectable {
+  cursor: pointer;
+}
+
+.not-available {
+  background-color: #eee;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* ========== SELECTED ACTIVITIES DISPLAY BOX ========== */
+#selected-activities {
+  display: none;
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-left: 8px solid #9ed034;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#selected-activities h3 {
+  margin-top: 0;
+  color: #4977D1;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+#selected-activities ul {
+  list-style: disc;
+  margin: 15px 0 0 20px;
+  color: #333;
+  text-align: left;
+}
+
+/* Enhanced Input & Button Styling */
+#selected-activities input,
+#selected-activities button {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+#selected-activities input {
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#selected-activities button {
+  background-color: #4977D1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+#selected-activities button:hover {
+  background-color: #9ed034;
+}
+
 /* ========== PARTNERS ========== */
 .partners {
   text-align: center;
@@ -308,11 +384,8 @@ label span:first-child {
   color: #4977D1;
   font-weight: bold;
 }
-body#cliffs header {
-  background: url("images/forest_cliff (1).jpg") no-repeat center;
-  background-size: cover;
-}
-/* ======= HOME PAGE CLOCK ======= */
+
+/* ========== TIME DISPLAY ========== */
 #timeofday {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2em;
@@ -320,23 +393,4 @@ body#cliffs header {
   padding: 15px 0;
   background: linear-gradient(0deg, rgba(251,215,139,1) 0%, rgba(118,213,245,1) 100%);
   color: #125688;
-}
-
-/* Highlight for selected activity cells */
-.selected {
-  background-color: #ffe08a !important;
-  color: #000;
-  font-weight: bold;
-}
-
-/* Visual cue for selectable cells */
-.selectable {
-  cursor: pointer;
-}
-
-/* Optional: style for not-available cells (if used) */
-.not-available {
-  background-color: #eee;
-  color: #999;
-  cursor: not-allowed;
 }
